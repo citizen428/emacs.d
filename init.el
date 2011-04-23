@@ -1,3 +1,6 @@
+;; start package.el before everything else
+(package-initialize)
+
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
 
 (defun add-local-path (p)
@@ -13,14 +16,19 @@
 (require 'rainbow-parens)
 (require 'rainbow-delimiters)
 
+;; git work in progress
+(load "git-wip")
+
 ;; The amazing undo tree
 (add-local-path "lib/undo-tree/")
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;;slime lets you connect to a swank server
+;; slime lets you connect to a swank server
 (add-local-path "lib/slime")
 (require 'slime)
+
+(require 'visible-mark)
 
 (load-local-file "config/built-in.el")
 (load-local-file "config/paredit-conf.el")
@@ -35,3 +43,9 @@
 (load-local-file "config/durendal-conf.el")
 (load-local-file "config/smex-conf.el")
 (load-local-file "config/yasnippet-conf.el")
+
+(load-local-file "config/org-mode-conf.el")
+(load-local-file "config/prog-lang-conf.el")
+;; (load-local-file "config/twittering-conf.el")
+(load-local-file "config/ruby-conf.el")
+(load-local-file "config/misc-conf.el")

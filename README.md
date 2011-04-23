@@ -1,33 +1,50 @@
-## Live Coding Emacs setup for Overtone
+My ~/.emacs.d
+---
 
-An opinionated set of defaults for getting started with Emacs for use as a live coding tool for Overtone. These have been extracted from Sam Aaron's personal dot-emacs which is even more opinionated and probably not entirely fit for general consumption. This version pulls out the most useful elements in a format that's simple to install and get you live coding quickly.
+This is my current `~/.emacs.d` and will quite likely always be a WIP.
 
-### Prerequisites
+What's inside?
+---
 
-This dot-emacs config has only been tested with a terminal hosted Emacs `23.2.1`. Issues and pull-requests for this and later versions will be happily accepted.
+ - I started from
+[live-coding-emacs](https://github.com/overtone/live-coding-emacs), a
+very nice Emacs configuration mainly focussed on Clojure.
 
-### Getting started
+ - I then installed some parts of the
+[emacs-starter-kit](https://github.com/technomancy/emacs-starter-kit)
+through ELPA.
 
-1. Download the source and move and rename the `live-coding-emacs` folder to `~/.emacs.d`
-2. Launch Emacs
-3. Live code your hat off!
+ - Last but not least I added the various configuration snippets I
+   got from blog posts, mailing lists and the Emacs wiki.
 
-### What's inside?
+Todo
+---
 
-This config includes an exciting cornucopia of Emacs goodies set up and ready to go. The highlights are:
+ -  Cleanup. There are quite likely some conflicts between
+    live-coding-emacs, the emacs-starter-kit and my own config which
+    I'll eventually have to resolve.
 
-* Clojure Mode (with fancy `(λ [a] (+ a 5))` and `ƒ(+ % 5)` prettifications)
-* Slime (for communicating with swank servers)
-* Auto completion (configured to work with slime for inline auto completion of documentation)
-* Tailor-made colour theme
-* Rainbow parens and delimiters (to allow you to easily navigate a sea of parens)
-* The amazing undo-tree (live-code with confidence!)
-* Textmate-like snippets
-* Fancy highlighting of sexps on eval
-* REPL syntax highlighting
+License
+---
 
-### Feedback
+All the parts I took from elsewhere remain under the license chosen by
+the original author.
 
-I'm very happy to hear any feedback regarding this config. The idea is for you to use it to get started and give you a platform to start editing it and turning it into something personal.
+Stuff I added myself is free software. You may distribute it under the
+terms of the [Poetic License](http://genaud.net/2005/10/poetic-license/).
 
+<pre>
+(c) 2011 Michael Kohl
 
+This work `as-is' we provide.
+No warranty, express or implied.
+We've done our best,
+to debug and test.
+Liability for damages denied.
+
+Permission is granted hereby,
+to copy, share, and modify.
+Use as is fit,
+free or for profit.
+On this notice these rights rely.
+</pre>
