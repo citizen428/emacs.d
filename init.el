@@ -15,8 +15,7 @@
 (require 'smooth-scrolling)
 (require 'rainbow-parens)
 (require 'rainbow-delimiters)
-
-;; git work in progress
+(require 'buffer-move)
 (load "git-wip")
 
 ;; The amazing undo tree
@@ -27,8 +26,6 @@
 ;; slime lets you connect to a swank server
 (add-local-path "lib/slime")
 (require 'slime)
-
-(require 'visible-mark)
 
 (load-local-file "config/built-in.el")
 (load-local-file "config/paredit-conf.el")
@@ -45,7 +42,7 @@
 (load-local-file "config/yasnippet-conf.el")
 
 (load-local-file "config/org-mode-conf.el")
-(load-local-file "config/prog-lang-conf.el")
 ;; (load-local-file "config/twittering-conf.el")
 (load-local-file "config/ruby-conf.el")
+(load-local-file "config/misc-lang-conf.el")
 (load-local-file "config/misc-conf.el")

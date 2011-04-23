@@ -20,7 +20,6 @@
 (eval-after-load 'find-file-in-project
   '(add-to-list 'ffip-patterns "*.clj"))
 
-
 ;; command to align let statements
 (add-local-path "lib/align-cljlet")
 (require 'align-cljlet)

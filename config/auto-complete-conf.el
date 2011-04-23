@@ -9,7 +9,7 @@
 (setq ac-auto-show-menu t)
 (setq ac-dwim t)
 (setq ac-use-menu-map t)
-(setq ac-quick-help-delay 1)
+;; (setq ac-quick-help-delay 1)
 (setq ac-quick-help-height 60)
 (ac-set-trigger-key "TAB")
 
@@ -25,10 +25,10 @@
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 
-(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
-                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
-                html-mode nxml-mode sh-mode smarty-mode clojure-mode
-                lisp-mode textile-mode markdown-mode tuareg-mode))
+(dolist (mode '(magit-log-edit-mode org-mode haml-mode
+                sass-mode yaml-mode haskell-mode
+                html-mode nxml-mode sh-mode clojure-mode
+                lisp-mode textile-mode markdown-mode))
   (add-to-list 'ac-modes mode))
 
 

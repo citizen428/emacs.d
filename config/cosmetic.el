@@ -6,6 +6,9 @@
 (load-local-file "lib/blackbored.el")
 (color-theme-blackbored)
 
+;; (load-local-file "lib/color-theme-sanityinc-solarized.el")
+;; (color-theme-sanityinc-solarized-light)
+
 ;; highlight current line
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#333333")
