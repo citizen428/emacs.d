@@ -1,6 +1,9 @@
 ;; start package.el before everything else
 (package-initialize)
 
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
 
 (defun add-local-path (p)
