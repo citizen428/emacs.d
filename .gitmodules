@@ -4,3 +4,6 @@
 [submodule "lib/cucumber.el"]
 	path = lib/cucumber.el
 	url = https://github.com/michaelklishin/cucumber.el
+[submodule "lib/coffee-mode"]
+	path = lib/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git

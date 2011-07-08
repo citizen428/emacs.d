@@ -3,7 +3,7 @@
 (require 'color-theme)
 
 ;; use blackbored colour theme
-;; (load-local-file "lib/blackbored.el")
+(load-local-file "lib/blackbored.el")
 ;; (color-theme-blackbored)
 
 (load-local-file "lib/color-theme-sanityinc-solarized.el")
@@ -14,7 +14,7 @@
 ;; (set-face-background 'hl-line "#333333")
 
 ;; set cursor colour
-;; (set-cursor-color "gray")
+(set-cursor-color "#777777")
 
 ;; make sure ansi colour character escapes are honoured
 (ansi-color-for-comint-mode-on)

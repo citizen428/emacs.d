@@ -15,3 +15,7 @@
 (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
+;; buffer-menu is almost like list-buffer,
+;; but moves point to buffer
+(global-set-key "\C-x\C-b" 'buffer-menu)
+

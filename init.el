@@ -1,8 +1,20 @@
 ;; start package.el before everything else
 (package-initialize)
 
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-(setq exec-path (append exec-path '("/usr/local/bin")))
+;; Thanks Steve Purcell
+;; https://github.com/purcell/emacs.d/blob/master/init-exec-path.el
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(when (eq 'ns window-system)
+  ;; When started from Emacs.app or similar, ensure $PATH
+  ;; is the same the user would see in Terminal.app
+  (if window-system (set-exec-path-from-shell-PATH)))
 
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
 

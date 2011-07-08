@@ -15,6 +15,12 @@
      (let ((help (get-char-property (point) 'help-echo)))
        (if help (message "%s" help)))))
 
+;; backups and auto-saves go to the temp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (add-hook 'post-command-hook 'my-flymake-show-help)
 
 
