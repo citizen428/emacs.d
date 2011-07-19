@@ -7,3 +7,6 @@
 [submodule "lib/coffee-mode"]
 	path = lib/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
+[submodule "lib/emacs-yammer"]
+	path = lib/emacs-yammer
+	url = git@github.com:citizen428/emacs-yammer.git

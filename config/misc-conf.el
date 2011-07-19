@@ -23,4 +23,4 @@
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
 
-
+(setq-default ispell-program-name "aspell")

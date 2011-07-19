@@ -1,4 +1,5 @@
 (require 'starter-kit-ruby)
+(disable-paredit-mode)
 
 ;; RVM support
 (require 'rvm)
