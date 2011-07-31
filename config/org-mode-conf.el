@@ -30,3 +30,4 @@
 (setq org-export-latex-listings 'true)
 
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
+(setq org-export-html-style-include-default nil)
