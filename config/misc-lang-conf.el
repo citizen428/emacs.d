@@ -51,3 +51,7 @@
           (coffee-compile-file)))))
 
 (add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
+
+;; Opa
+(autoload 'opa-mode "/opt/mlstate/share/opa/emacs/opa-mode.el" "OPA editing mode" t)
+(add-to-list 'auto-mode-alist '("\\.opa$" . opa-mode))
