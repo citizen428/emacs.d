@@ -10,3 +10,6 @@
 [submodule "lib/emacs-yammer"]
 	path = lib/emacs-yammer
 	url = git@github.com:citizen428/emacs-yammer.git
+[submodule "lib/nyan-mode"]
+	path = lib/nyan-mode
+	url = https://github.com/TeMPOraL/nyan-mode.git

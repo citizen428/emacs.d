@@ -1,6 +1,9 @@
 (require 'visible-mark)
 (require 'csv-mode)
 (require 'markdown-mode)
+(add-local-path "lib/nyan-mode/")
+(require 'nyan-mode)
+(nyan-mode)
 
 (add-to-list 'auto-mode-alist '("\\.zsh.*\\'" . shell-script-mode))
 
