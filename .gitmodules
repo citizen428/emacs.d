@@ -13,3 +13,6 @@
 [submodule "lib/nyan-mode"]
 	path = lib/nyan-mode
 	url = https://github.com/TeMPOraL/nyan-mode.git
+[submodule "lib/rinari"]
+	path = lib/rinari
+	url = https://github.com/eschulte/rinari.git
