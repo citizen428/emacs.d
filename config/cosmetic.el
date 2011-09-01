@@ -1,10 +1,5 @@
 ;; Color-theme
-(add-local-path "lib/color-theme")
 (require 'color-theme)
-
-;; use blackbored colour theme
-(load-local-file "lib/blackbored.el")
-;; (color-theme-blackbored)
 
 (load-local-file "lib/color-theme-sanityinc-solarized.el")
 (color-theme-sanityinc-solarized-dark)

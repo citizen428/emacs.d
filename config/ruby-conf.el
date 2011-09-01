@@ -1,7 +1,5 @@
 (require 'starter-kit-ruby)
-(disable-paredit-mode)
 
-;; RVM support
 (require 'rvm)
 (rvm-use-default)
 
@@ -11,10 +9,8 @@
 (require 'rinari)
 (add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
-;; whitespace-mode for Ruby code
 (add-hook 'ruby-mode-hook 'whitespace-mode)
 
-;; rspec
 (require 'rspec-mode)
 
 ;; cucumber
@@ -24,15 +20,10 @@
 
 (require 'haml-mode)
 
-(require 'rainbow-mode)
-(add-hook 'css-mode-hook 'rainbow-mode)
-
 ;; minor fix for ruby-compilation
 (define-key ruby-compilation-minor-mode-map [return] 'comint-send-input)
 
 ;;; fron emacs-starter-kit
-
-
 ;;; Flymake
 
 (defun flymake-ruby-init ()
@@ -67,3 +58,4 @@
            flymake-err-line-patterns)
      (add-hook 'ruby-mode-hook 'flymake-ruby-enable)))
 
+(paredit-mode -1)

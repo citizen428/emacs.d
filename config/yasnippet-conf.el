@@ -1,4 +1,3 @@
-(add-local-path "lib/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 

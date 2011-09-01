@@ -1,7 +1,4 @@
-(add-local-path "lib/clojure-mode")
 (require 'clojure-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
 
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
@@ -21,8 +18,10 @@
   '(add-to-list 'ffip-patterns "*.clj"))
 
 ;; command to align let statements
-(add-local-path "lib/align-cljlet")
 (require 'align-cljlet)
+
+(require 'durendal)
+(durendal-enable)
 
 ;; http://jakemccrary.com/blog/2010/12/07/quickily-starting-a-powerful-clojure-repl.html
 (defun clojure-swank ()
@@ -49,3 +48,4 @@
               (sit-for 1)
               (decf timeout)))
           (ignore-errors (kill-buffer "*clojure-swank*")))))
+

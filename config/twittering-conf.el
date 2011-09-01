@@ -1,4 +1,3 @@
-(add-local-path "lib/twittering-mode")
 (require 'twittering-mode)
 ; (setq twittering-icon-mode t)
 (setq twittering-timer-interval 600)

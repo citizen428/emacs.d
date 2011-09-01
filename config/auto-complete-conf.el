@@ -1,5 +1,4 @@
 ;;auto-complete mode
-(add-local-path "lib/auto-complete")
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
@@ -15,9 +14,10 @@
 
 (define-key ac-completing-map (kbd "C-M-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-M-p") 'ac-previous)
-(define-key ac-completing-map "\t" 'ac-complete)
-(define-key ac-completing-map "\r" nil)
 
+;; tab and enter complete
+(define-key ac-completing-map "\t" 'ac-complete)
+(define-key ac-completing-map "\r" 'ac-complete)
 
 (set-default 'ac-sources
              '(ac-source-dictionary
@@ -25,14 +25,12 @@
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 
-(dolist (mode '(magit-log-edit-mode org-mode haml-mode
+(dolist (mode '(magit-log-edit-mode haml-mode
                 sass-mode yaml-mode haskell-mode
                 html-mode nxml-mode sh-mode clojure-mode
                 lisp-mode textile-mode markdown-mode))
   (add-to-list 'ac-modes mode))
 
-
-(add-local-path "lib/ac-slime")
 ;;ac-slime auto-complete plugin
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)

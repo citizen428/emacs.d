@@ -22,7 +22,7 @@
 ;; (autoload 'smalltalk-mode (concat gst-path "/smalltalk-mode.elc") "" t)
 
 ;; Haskell
-(load (concat dotfiles-dir "lib/haskell-mode/haskell-site-file"))
+(load (concat dotfiles-dir "lib/haskellmode-emacs/haskell-site-file"))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
@@ -32,7 +32,6 @@
 ;;       (cons '("\\.pure\\(rc\\)?$" . pure-mode) auto-mode-alist))
 
 ;; Coffescript
-(add-local-path "lib/coffee-mode/")
 (require 'coffee-mode)
 
 (defun coffee-custom ()

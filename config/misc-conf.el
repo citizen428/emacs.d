@@ -1,9 +1,15 @@
-(require 'visible-mark)
+(require 'buffer-move)
 (require 'csv-mode)
+(require 'dircolors)
+(require 'highlight-indentation)
 (require 'markdown-mode)
-(add-local-path "lib/nyan-mode/")
+(require 'smooth-scrolling)
+(require 'visible-mark)
+
 (require 'nyan-mode)
 (nyan-mode)
+
+(load "git-wip")
 
 (add-to-list 'auto-mode-alist '("\\.zsh.*\\'" . shell-script-mode))
 
@@ -18,12 +24,11 @@
      (let ((help (get-char-property (point) 'help-echo)))
        (if help (message "%s" help)))))
 
-;; backups and auto-saves go to the temp dir
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
 (add-hook 'post-command-hook 'my-flymake-show-help)
-
 (setq-default ispell-program-name "aspell")
+
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(require 'rainbow-mode)
+(add-hook 'css-mode-hook 'rainbow-mode)

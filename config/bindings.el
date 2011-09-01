@@ -1,8 +1,7 @@
-;; Use command as meta
-(setq ns-alternate-modifier 'none)
-(setq ns-command-modifier 'meta)
-
-;; (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen)
+;; Use command as meta on OSX
+(when (eq system-type 'darwin)
+  (setq ns-alternate-modifier 'none)
+  (setq ns-command-modifier 'meta))
 
 ;; a popup menu for the kill ring
 (global-set-key "\C-cy" '(lambda ()
