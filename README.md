@@ -14,15 +14,8 @@ very nice Emacs configuration mainly focussed on Clojure.
 [emacs-starter-kit](https://github.com/technomancy/emacs-starter-kit)
 through ELPA.
 
- - Last but not least I added the various configuration snippets I
+ - Last but not least I added various configuration snippets I
    got from blog posts, mailing lists and the Emacs wiki.
-
-Todo
----
-
- -  Cleanup. There are quite likely some conflicts between
-    live-coding-emacs, the emacs-starter-kit and my own config which
-    I'll eventually have to resolve.
 
 License
 ---
