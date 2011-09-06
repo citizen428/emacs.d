@@ -31,3 +31,8 @@
 
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 (setq org-export-html-style-include-default nil)
+
+;; org-mac-link-grabber
+(setq org-mac-grab-Addressbook-app-p nil)
+(setq org-mac-grab-Firefox-app-p nil)
+(setq org-mac-grab-Mail-app-p nil)

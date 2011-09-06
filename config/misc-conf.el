@@ -32,3 +32,5 @@
 
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
+
+(setq global-visible-mark-mode t)
