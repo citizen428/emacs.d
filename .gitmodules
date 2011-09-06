@@ -16,3 +16,6 @@
 [submodule "lib/rinari"]
 	path = lib/rinari
 	url = https://github.com/eschulte/rinari.git
+[submodule "lib/full-ack"]
+	path = lib/full-ack
+	url = https://github.com/nschum/full-ack.git
