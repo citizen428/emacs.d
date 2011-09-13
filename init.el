@@ -12,8 +12,8 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(when (or (eq 'ns window-system) (eq window-system 'x))
-  (if window-system (set-exec-path-from-shell-PATH)))
+(when (or (eq window-system 'ns) (eq window-system 'x))
+  (set-exec-path-from-shell-PATH))
 
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
 
