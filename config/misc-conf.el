@@ -2,9 +2,11 @@
 (require 'csv-mode)
 (require 'dircolors)
 (require 'highlight-indentation)
-(require 'markdown-mode)
 (require 'smooth-scrolling)
 (require 'visible-mark)
+
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 (require 'nyan-mode)
 (nyan-mode)

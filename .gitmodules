@@ -22,3 +22,6 @@
 [submodule "lib/org-mode"]
 	path = lib/org-mode
 	url = git://repo.or.cz/org-mode.git
+[submodule "lib/Emacs-Liquid.git"]
+	path = lib/Emacs-Liquid.git
+	url = https://github.com/rehanift/Emacs-Liquid.git
