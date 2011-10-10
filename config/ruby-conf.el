@@ -1,8 +1,5 @@
 (require 'starter-kit-ruby)
 
-(require 'rvm)
-(rvm-use-default)
-
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 
@@ -58,4 +55,4 @@
            flymake-err-line-patterns)
      (add-hook 'ruby-mode-hook 'flymake-ruby-enable)))
 
-(paredit-mode -1)
+
