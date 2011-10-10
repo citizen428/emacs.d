@@ -1,3 +1,5 @@
+(setq org-startup-indented t)
+
 (require 'org-mac-link-grabber)
 (add-hook 'org-mode-hook
           (lambda ()
