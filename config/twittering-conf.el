@@ -12,7 +12,7 @@
         ":direct_messages"
         ":search/clojure/"
         ":search/#jlang/"
-        "citizen428/tupaleros"))
+        ":search/happynerds/"))
 
 (add-hook 'twittering-mode-hook
           (lambda ()

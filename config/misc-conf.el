@@ -6,8 +6,7 @@
 (require 'visible-mark)
 
 (require 'markdown-mode)
-(add-hook 'markdown-mode-hook 'turn-off-auto-fill)
-(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 (require 'nyan-mode)
 (nyan-mode)
