@@ -7,12 +7,9 @@
 [submodule "lib/coffee-mode"]
 	path = lib/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
-[submodule "lib/emacs-yammer"]
-	path = lib/emacs-yammer
-	url = git@github.com:citizen428/emacs-yammer.git
 [submodule "lib/nyan-mode"]
 	path = lib/nyan-mode
-	url = https://github.com/TeMPOraL/nyan-mode.git
+	url = https://github.com/citizen428/nyan-mode
 [submodule "lib/rinari"]
 	path = lib/rinari
 	url = https://github.com/eschulte/rinari.git
@@ -28,3 +25,6 @@
 [submodule "lib/markdown-mode"]
 	path = lib/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "nyan-mode"]
+	path = nyan-mode
+	url = https://github.com/citizen428/nyan-mode
