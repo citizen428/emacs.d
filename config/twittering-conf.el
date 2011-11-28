@@ -1,5 +1,5 @@
 (require 'twittering-mode)
-; (setq twittering-icon-mode t)
+(setq twittering-icon-mode t)
 (setq twittering-timer-interval 600)
 (setq twittering-url-show-status nil)
 (setq twittering-use-show-minibuffer-length t)
@@ -10,9 +10,8 @@
       '(":friends"
         ":replies"
         ":direct_messages"
-        ":search/clojure/"
-        ":search/#jlang/"
-        ":search/happynerds/"))
+        ":search/happynerds/"
+        ":search/citizen428.net/"))
 
 (add-hook 'twittering-mode-hook
           (lambda ()

@@ -25,3 +25,6 @@
 [submodule "lib/nyan-mode"]
 	path = lib/nyan-mode
 	url = git@github.com:citizen428/nyan-mode.git
+[submodule "lib/minimap"]
+	path = lib/minimap
+	url = git://randomsample.de/minimap.git

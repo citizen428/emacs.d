@@ -2,6 +2,8 @@
 (require 'csv-mode)
 (require 'dircolors)
 (require 'highlight-indentation)
+(require 'minimap)
+(setq minimap-window-location (quote right))
 (require 'smooth-scrolling)
 (require 'visible-mark)
 

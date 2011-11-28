@@ -22,4 +22,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
-(set-default-font "-unknown-Inconsolata-normal-normal-normal-*-12-*-*-*-m-0-iso8859-15")
+
+(if (eq window-system 'x)
+    (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso8859-15")
+  (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-12-*-*-*-m-0-iso8859-15"))

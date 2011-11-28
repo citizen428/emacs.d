@@ -50,5 +50,3 @@
 (load-local-file "config/misc-conf.el")
 (load-local-file "config/org-mode-conf.el")
 (load-local-file "config/twittering-conf.el")
-
-
