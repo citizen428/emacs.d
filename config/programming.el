@@ -26,31 +26,38 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;; Lua
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+;; nmap scripting engine
+(add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
+
 ;; ;; Pure
 ;; (require 'pure-mode)
 ;; (setq auto-mode-alist
 ;;       (cons '("\\.pure\\(rc\\)?$" . pure-mode) auto-mode-alist))
 
 ;; Coffescript
-(require 'coffee-mode)
+;; (require 'coffee-mode)
 
-(defun coffee-custom ()
-  "coffee-mode-hook"
+;; (defun coffee-custom ()
+;;   "coffee-mode-hook"
 
-  ;; CoffeeScript uses two spaces.
-  (set (make-local-variable 'tab-width) 2)
+;;   ;; CoffeeScript uses two spaces.
+;;   (set (make-local-variable 'tab-width) 2)
 
-  ;; If you don't have js2-mode
-  (setq coffee-js-mode 'javascript-mode)
+;;   ;; If you don't have js2-mode
+;;   (setq coffee-js-mode 'javascript-mode)
 
-  ;; Compile '.coffee' files on every save
-  (add-hook 'after-save-hook
-      '(lambda ()
-         (when (string-match "\.coffee$" (buffer-name))
-          (coffee-compile-file)))))
+;;   ;; Compile '.coffee' files on every save
+;;   (add-hook 'after-save-hook
+;;       '(lambda ()
+;;          (when (string-match "\.coffee$" (buffer-name))
+;;           (coffee-compile-file)))))
 
-(add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
+;; (add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
 
-;; Opa
-(autoload 'opa-mode "/opt/mlstate/share/opa/emacs/opa-mode.el" "OPA editing mode" t)
-(add-to-list 'auto-mode-alist '("\\.opa$" . opa-mode))
+;; ;; Opa
+;; (autoload 'opa-mode "/opt/mlstate/share/opa/emacs/opa-mode.el" "OPA editing mode" t)
+;; (add-to-list 'auto-mode-alist '("\\.opa$" . opa-mode))

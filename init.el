@@ -13,7 +13,9 @@
     (setq exec-path (split-string path-from-shell path-separator))))
 
 (when (or (eq window-system 'ns) (eq window-system 'x))
-  (set-exec-path-from-shell-PATH))
+  (set-exec-path-from-shell-PATH)
+  (setq browse-url-generic-program (executable-find "google-chrome")
+      browse-url-browser-function 'browse-url-generic))
 
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
 
@@ -50,3 +52,4 @@
 (load-local-file "config/misc-conf.el")
 (load-local-file "config/org-mode-conf.el")
 (load-local-file "config/twittering-conf.el")
+(put 'ido-exit-minibuffer 'disabled nil)
