@@ -2,18 +2,23 @@
 (require 'csv-mode)
 (require 'dircolors)
 (require 'highlight-indentation)
-(require 'minimap)
-(setq minimap-window-location (quote right))
-(require 'smooth-scrolling)
-(require 'visible-mark)
-
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'turn-off-auto-fill)
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-
+(require 'minimap)
+(setq minimap-window-location (quote right))
 (require 'nyan-mode)
 (nyan-mode)
+(require 'quickrun)
+(global-set-key (kbd "<f7>") 'quickrun)
+(global-set-key (kbd "<f8>") 'quickrun-compile-only)
+(require 'rainbow-mode)
+(add-hook 'css-mode-hook 'rainbow-mode)
+(require 'smooth-scrolling)
+(require 'undo-tree)
+(global-undo-tree-mode)
+(require 'visible-mark)
 
 (load "git-wip")
 
@@ -32,11 +37,5 @@
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
 (setq-default ispell-program-name "aspell")
-
-(require 'undo-tree)
-(global-undo-tree-mode)
-
-(require 'rainbow-mode)
-(add-hook 'css-mode-hook 'rainbow-mode)
 
 (setq global-visible-mark-mode t)
