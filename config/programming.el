@@ -1,37 +1,12 @@
-;; Scheme
-(require 'quack)
+;; ;; Erlang
+;; (setq erlang-path "/usr/local/Cellar/erlang")
+;; (setq load-path (cons (concat erlang-path "/R14B03/lib/erlang/lib/tools-2.6.6.4/emacs") load-path))
+;; (setq erlang-root-dir erlang-path)
+;; (setq exec-path (cons (concat erlang-path "/bin") exec-path))
+;; (require 'erlang-start)
 
-;; Erlang
-
-(setq erlang-path "/usr/local/Cellar/erlang/R14B02")
-(setq load-path (cons (concat erlang-path "/lib/erlang/lib/tools-2.6.6.3/emacs") load-path))
-(setq erlang-root-dir erlang-path)
-(setq exec-path (cons (concat erlang-path "/bin") exec-path))
-(require 'erlang-start)
-
-;; Factor
-(load-file "/Applications/factor/misc/fuel/fu.el")
-
-;; GNU Smalltalk
-(setq gst-path "/usr/local/Cellar/gnu-smalltalk/3.2.2/share/emacs/site-lisp")
-
-(setq auto-mode-alist
-      (append  '(("\\.st\\'" . smalltalk-mode))
-               auto-mode-alist))
-
-(autoload 'smalltalk-mode (concat gst-path "/smalltalk-mode.elc") "" t)
-
-;; Haskell
-(load (concat dotfiles-dir "lib/haskellmode-emacs/haskell-site-file"))
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-
-;; Lua
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-;; nmap scripting engine
-(add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
+;; ;; Factor
+;; (load-file "/Applications/factor/misc/fuel/fu.el")
 
 ;; GForth
 (autoload 'forth-mode "gforth.el")
@@ -46,3 +21,35 @@
                       (setq forth-indent-level 4)
                       (setq forth-minor-indent-level 2)
                       (setq forth-hilight-level 3))))
+
+;; ;; GNU Smalltalk
+;; (setq gst-path "/usr/local/Cellar/gnu-smalltalk/3.2.2/share/emacs/site-lisp")
+
+;; (setq auto-mode-alist
+;;       (append  '(("\\.st\\'" . smalltalk-mode))
+;;                auto-mode-alist))
+
+;; (autoload 'smalltalk-mode (concat gst-path "/smalltalk-mode.elc") "" t)
+
+;; Haskell
+(load (concat dotfiles-dir "lib/haskellmode-emacs/haskell-site-file"))
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+;; Lua
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+;; nmap scripting engine
+(add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
+
+;; Scala
+(require 'scala-mode)
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(setq auto-mode-alist
+      (append  '(("\\.sbt\\'" . scala-mode))
+               auto-mode-alist))
+
+;; Scheme
+(require 'quack)
