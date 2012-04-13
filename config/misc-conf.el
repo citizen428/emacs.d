@@ -20,6 +20,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (require 'visible-mark)
+(require 'yaml-mode)
 
 (load "git-wip")
 
@@ -37,6 +38,9 @@
        (if help (message "%s" help)))))
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
-(setq-default ispell-program-name "aspell")
 
+;; Some global settings
+(setq-default ispell-program-name "aspell")
 (setq global-visible-mark-mode t)
+(setq global-auto-revert-mode t)
+(setq global-linum-mode t)
