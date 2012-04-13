@@ -37,4 +37,3 @@
 ;;  ** Better handling of the temp buffer
 ;; 1.0
 ;;  * Initial Release
-
