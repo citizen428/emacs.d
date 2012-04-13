@@ -5,9 +5,6 @@
 ;; (setq exec-path (cons (concat erlang-path "/bin") exec-path))
 ;; (require 'erlang-start)
 
-;; ;; Factor
-;; (load-file "/Applications/factor/misc/fuel/fu.el")
-
 ;; GForth
 (autoload 'forth-mode "gforth.el")
 (setq auto-mode-alist (cons '("\\.fs\\'" . forth-mode)
@@ -43,13 +40,10 @@
 ;; nmap scripting engine
 (add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
 
-;; Scala
-(require 'scala-mode)
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(setq auto-mode-alist
-      (append  '(("\\.sbt\\'" . scala-mode))
-               auto-mode-alist))
-
 ;; Scheme
 (require 'quack)
+
+;; Magit
+(add-hook 'magit-mode-hook
+          (lambda ()
+            (define-key magit-mode-map (kbd "P") 'magit-push)))
