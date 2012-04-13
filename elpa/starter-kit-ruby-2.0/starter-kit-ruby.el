@@ -93,7 +93,7 @@ exec-to-string command, but it works and seems fast"
        (ad-activate 'ruby-do-run-w/compilation)))
 
   (add-hook 'ruby-mode-hook 'esk-run-coding-hook)
-  (add-hook 'ruby-mode-hook 'esk-paredit-nonlisp)
+;;  (add-hook 'ruby-mode-hook 'esk-paredit-nonlisp)
 
   ;; Rinari (Minor Mode for Ruby On Rails)
   (setq rinari-major-modes

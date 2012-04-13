@@ -42,7 +42,7 @@ exec-to-string command, but it works and seems fast" (delq nil (mapcar (quote (l
 
 (add-hook 'ruby-mode-hook 'esk-run-coding-hook)
 
-(add-hook 'ruby-mode-hook 'esk-paredit-nonlisp)
+;; (add-hook 'ruby-mode-hook 'esk-paredit-nonlisp)
 
 (setq rinari-major-modes (list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook 'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook))
 
