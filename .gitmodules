@@ -28,9 +28,6 @@
 [submodule "lib/yaml-mode"]
 	path = lib/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode
-[submodule "lib/hyde"]
-	path = lib/hyde
-	url = https://github.com/nibrahim/Hyde.git
 [submodule "lib/quickrun"]
 	path = lib/quickrun
 	url = https://github.com/syohex/emacs-quickrun.git
