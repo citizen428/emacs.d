@@ -43,4 +43,4 @@
 (setq-default ispell-program-name "aspell")
 (setq global-visible-mark-mode t)
 (setq global-auto-revert-mode t)
-(setq global-linum-mode t)
+(global-linum-mode)
