@@ -31,3 +31,6 @@
 [submodule "lib/quickrun"]
 	path = lib/quickrun
 	url = https://github.com/syohex/emacs-quickrun.git
+[submodule "etc/snippets/ruby-mode"]
+	path = etc/snippets/ruby-mode
+	url = https://github.com/bmaland/yasnippet-ruby-mode.git
