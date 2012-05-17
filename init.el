@@ -39,7 +39,7 @@
 (load-local-file "config/built-in.el")
 (load-local-file "config/cosmetic.el")
 (load-local-file "config/ido-conf.el")
-(load-local-file "config/keychord-conf.el")
+(load-local-file "config/movement-conf.el")
 (load-local-file "config/smex-conf.el")
 
 ;; programming
