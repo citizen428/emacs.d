@@ -18,12 +18,14 @@
 ;; tab and enter complete
 (define-key ac-completing-map "\t" 'ac-complete)
 (define-key ac-completing-map "\r" 'ac-complete)
+(define-key ac-complete-mode-map "\r" nil)
 
 (set-default 'ac-sources
              '(ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
-               ac-source-words-in-all-buffer))
+               ac-source-words-in-all-buffer
+               ac-source-yasnippet))
 
 (dolist (mode '(magit-log-edit-mode haml-mode
                 sass-mode yaml-mode haskell-mode
@@ -35,4 +37,3 @@
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-
