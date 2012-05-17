@@ -2,7 +2,6 @@
 (require 'csv-mode)
 (require 'dircolors)
 (require 'highlight-indentation)
-(require 'hyde)
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'turn-off-auto-fill)
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
@@ -25,6 +24,7 @@
 (load "git-wip")
 
 (add-to-list 'auto-mode-alist '("\\.zsh.*\\'" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.mdown.*\\'" . markdown-mode))
 
 ;; Automatically make script files executable
 ;; http://www.masteringemacs.org/articles/2011/01/19/script-files-executable-automatically/
@@ -43,4 +43,4 @@
 (setq-default ispell-program-name "aspell")
 (setq global-visible-mark-mode t)
 (setq global-auto-revert-mode t)
-(global-linum-mode)
+;; (global-linum-mode)
