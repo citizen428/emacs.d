@@ -55,7 +55,7 @@
   "*Mode map for inf-ruby-mode")
 
 (defvar inf-ruby-implementations
-  '(("ruby"     . "irb --inf-ruby-mode -r irb/completion -f")
+  '(("ruby"     . "irb --inf-ruby-mode -r irb/completion")
     ("jruby"    . "jruby -S irb -r irb/completion")
     ("rubinius" . "rbx -r irb/completion")
     ("yarv"     . "irb1.9 --inf-ruby-mode -r irb/completion")) ;; TODO: ironruby?
