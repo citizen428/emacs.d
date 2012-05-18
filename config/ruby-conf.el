@@ -17,8 +17,10 @@
 
 (require 'haml-mode)
 
-;; minor fix for ruby-compilation
-(define-key ruby-compilation-minor-mode-map [return] 'comint-send-input)
+(add-to-list 'inf-ruby-implementations '("pry" . "pry -f"))
+(setq inf-ruby-default-implementation "pry")
+(setq inf-ruby-first-prompt-pattern "^\\[[0-9]+\\] pry\\((.*)\\)> *")
+(setq inf-ruby-prompt-pattern "^\\[[0-9]+\\] pry\\((.*)\\)[>*\"'] *")
 
 ;;; fron emacs-starter-kit
 ;;; Flymake
@@ -54,5 +56,3 @@
      (push '("^\\(.*\\):\\([0-9]+\\): \\(.*\\)$" 1 2 nil 3)
            flymake-err-line-patterns)
      (add-hook 'ruby-mode-hook 'flymake-ruby-enable)))
-
-
