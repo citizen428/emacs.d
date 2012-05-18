@@ -1,5 +1,7 @@
 (require 'csv-mode)
 (require 'dircolors)
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'turn-off-auto-fill)
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
@@ -15,6 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.zsh.*\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown.*\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 ;; Automatically make script files executable
 ;; http://www.masteringemacs.org/articles/2011/01/19/script-files-executable-automatically/
