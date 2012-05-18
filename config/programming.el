@@ -7,11 +7,12 @@
 (add-hook 'css-mode-hook 'rainbow-mode)
 
 ;; Erlang
-(setq erlang-path "/usr/local/Cellar/erlang")
-(setq load-path (cons (concat erlang-path "/R15B01/lib/erlang/lib/tools-2.6.7/emacs") load-path))
-(setq erlang-root-dir erlang-path)
-(setq exec-path (cons (concat erlang-path "/bin") exec-path))
-(require 'erlang-start)
+(setq erlang-path "/usr/local/Cellar/erlang/R15B01")
+(when (file-exists-p erlang-path)
+(setq load-path (cons (concat erlang-path "/lib/erlang/lib/tools-2.6.7/emacs") load-path))
+  (setq erlang-root-dir erlang-path)
+  (setq exec-path (cons (concat erlang-path "/bin") exec-path))
+  (require 'erlang-start))
 
 ;; Git
 (add-hook 'magit-mode-hook
@@ -32,17 +33,8 @@
 ;; nmap scripting engine
 (add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
 
-;; ;; GNU Smalltalk
-;; (setq gst-path "/usr/local/Cellar/gnu-smalltalk/3.2.2/share/emacs/site-lisp")
-
-;; (setq auto-mode-alist
-;;       (append  '(("\\.st\\'" . smalltalk-mode))
-;;                auto-mode-alist))
-
-;; (autoload 'smalltalk-mode (concat gst-path "/smalltalk-mode.elc") "" t)
-
 ;; Scheme
-;; (require 'quack)
+(require 'quack)
 
 ;; YAML
 (require 'yaml-mode)
