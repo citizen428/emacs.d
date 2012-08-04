@@ -2,6 +2,11 @@
 (global-set-key (kbd "<f7>") 'quickrun)
 (global-set-key (kbd "<f8>") 'quickrun-compile-only)
 
+;; CoffeeScript
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (set 'tab-with 2)))
+
 ;; CSS
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
