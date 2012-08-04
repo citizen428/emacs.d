@@ -22,6 +22,5 @@ session*
 tramp
 \#*
 tmp/*
-config/michi.el
 init.el
 eshell
