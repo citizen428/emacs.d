@@ -13,9 +13,6 @@
 [submodule "lib/minimap"]
 	path = lib/minimap
 	url = git://randomsample.de/minimap.git
-[submodule "lib/lua-mode"]
-	path = lib/lua-mode
-	url = https://github.com/immerrr/lua-mode.git
 [submodule "lib/yaml-mode"]
 	path = lib/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode
