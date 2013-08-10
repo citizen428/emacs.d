@@ -1,6 +1,3 @@
-[submodule "lib/twittering-mode"]
-	path = lib/twittering-mode
-	url = https://github.com/hayamiz/twittering-mode.git
 [submodule "lib/cucumber.el"]
 	path = lib/cucumber.el
 	url = https://github.com/michaelklishin/cucumber.el
