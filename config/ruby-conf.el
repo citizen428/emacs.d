@@ -16,6 +16,7 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 (require 'haml-mode)
+(add-hook 'haml-mode-hook 'rinari-minor-mode)
 
 (add-to-list 'inf-ruby-implementations '("pry" . "pry -f"))
 (setq inf-ruby-default-implementation "pry")
