@@ -31,6 +31,3 @@
 [submodule "etc/snippets/ruby-mode"]
 	path = etc/snippets/ruby-mode
 	url = https://github.com/bmaland/yasnippet-ruby-mode.git
-[submodule "lib/expand-region"]
-	path = lib/expand-region
-	url = https://github.com/magnars/expand-region.el.git
