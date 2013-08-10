@@ -7,9 +7,6 @@
 [submodule "lib/org-mode"]
 	path = lib/org-mode
 	url = git://repo.or.cz/org-mode.git
-[submodule "lib/markdown-mode"]
-	path = lib/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
 [submodule "lib/nyan-mode"]
 	path = lib/nyan-mode
 	url = git@github.com:citizen428/nyan-mode.git
