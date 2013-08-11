@@ -13,9 +13,6 @@
 [submodule "lib/minimap"]
 	path = lib/minimap
 	url = git://randomsample.de/minimap.git
-[submodule "lib/yaml-mode"]
-	path = lib/yaml-mode
-	url = https://github.com/yoshiki/yaml-mode
 [submodule "etc/snippets/ruby-mode"]
 	path = etc/snippets/ruby-mode
 	url = https://github.com/bmaland/yasnippet-ruby-mode.git
