@@ -1,6 +1,5 @@
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
-(require 'paredit)
 (defun turn-on-paredit ()
   (paredit-mode t))
 
@@ -13,7 +12,6 @@
   (rainbow-delimiters-mode t))
 
 (require 'rainbow-parens)
-(require 'rainbow-delimiters)
 
 (dolist (x '(scheme emacs-lisp lisp clojure))
   (when window-system

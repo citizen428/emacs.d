@@ -1,18 +1,15 @@
-(require 'csv-mode)
 (require 'dircolors)
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
-(require 'markdown-mode)
-(add-hook 'markdown-mode-hook 'turn-off-auto-fill)
-(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
-(require 'minimap)
-(setq minimap-window-location (quote right))
 (require 'nyan-mode)
 (nyan-mode)
-(require 'smooth-scrolling)
-(require 'undo-tree)
 (global-undo-tree-mode)
 (require 'visible-mark)
+
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(add-hook 'markdown-mode-hook 'turn-off-auto-fill)
+(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
+
+(setq minimap-window-location (quote right))
 
 (add-to-list 'auto-mode-alist '("\\.zsh.*\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown.*\\'" . markdown-mode))

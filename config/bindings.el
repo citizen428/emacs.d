@@ -18,3 +18,12 @@
 ;; but moves point to buffer
 (global-set-key "\C-x\C-b" 'buffer-menu)
 
+;; ace-jump-mode
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+;; key-chord-mode
+(key-chord-mode 1)
+;; Move to char (f+g forward, d+f backward)
+(key-chord-define-global "fg" 'iy-go-to-char)
+(key-chord-define-global "df" 'iy-go-to-char-backward)
+(key-chord-define-global "ww" 'yas/expand)

@@ -16,7 +16,7 @@
   (set-exec-path-from-shell-PATH))
 
 (when (eq window-system 'x)
-  (setq browse-url-generic-program (executable-find "google-chrome")
+  (setq browse-url-generic-program (executable-find "firefox")
         browse-url-browser-function 'browse-url-generic))
 
 (setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
@@ -39,7 +39,6 @@
 (load-local-file "config/built-in.el")
 (load-local-file "config/cosmetic.el")
 (load-local-file "config/ido-conf.el")
-(load-local-file "config/movement-conf.el")
 (load-local-file "config/smex-conf.el")
 
 ;; programming

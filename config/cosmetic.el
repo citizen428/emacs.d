@@ -1,12 +1,3 @@
-;; Color-theme
-(require 'color-theme)
-
-;; (load-local-file "lib/color-theme-sanityinc-solarized.el")
-;; (color-theme-sanityinc-solarized-dark)
-
-;; (load-local-file "lib/color-theme-twilight.el")
-;; (color-theme-twilight)
-
 (load-local-file "lib/tomorrow-theme/color-theme-tomorrow.el")
 (color-theme-tomorrow-night)
 

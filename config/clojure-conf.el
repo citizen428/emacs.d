@@ -1,5 +1,3 @@
-(require 'clojure-mode)
-
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
     'clojure-mode `(("(\\(fn\\>\\)"
@@ -22,4 +20,3 @@
 
 (require 'durendal)
 (durendal-enable)
-

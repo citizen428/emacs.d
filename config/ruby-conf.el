@@ -1,21 +1,6 @@
-(require 'starter-kit-ruby)
-
-(require 'ruby-electric)
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
-
-(require 'rinari)
 (add-hook 'ruby-mode-hook 'rinari-minor-mode)
-
 (add-hook 'ruby-mode-hook 'whitespace-mode)
-
-(require 'rspec-mode)
-
-;; cucumber
-(add-local-path "lib/cucumber.el")
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
-(require 'haml-mode)
 (add-hook 'haml-mode-hook 'rinari-minor-mode)
 
 (add-to-list 'inf-ruby-implementations '("pry" . "pry -f"))

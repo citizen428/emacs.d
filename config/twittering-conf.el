@@ -1,4 +1,3 @@
-(require 'twittering-mode)
 (setq twittering-icon-mode t)
 (setq twittering-timer-interval 600)
 (setq twittering-url-show-status nil)
