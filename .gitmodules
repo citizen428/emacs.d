@@ -1,9 +1,6 @@
 [submodule "lib/cucumber.el"]
 	path = lib/cucumber.el
 	url = https://github.com/michaelklishin/cucumber.el
-[submodule "lib/rinari"]
-	path = lib/rinari
-	url = https://github.com/eschulte/rinari.git
 [submodule "lib/org-mode"]
 	path = lib/org-mode
 	url = git://repo.or.cz/org-mode.git
