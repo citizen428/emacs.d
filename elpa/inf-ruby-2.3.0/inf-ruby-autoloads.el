@@ -3,9 +3,10 @@
 ;;; Code:
 
 
-;;;### (autoloads (inf-ruby-switch-setup run-ruby inf-ruby inf-ruby-minor-mode
-;;;;;;  inf-ruby-setup-keybindings) "inf-ruby" "inf-ruby.el" (20976
-;;;;;;  3179 671683 216000))
+;;;### (autoloads (inf-ruby-console-default inf-ruby-console-gem
+;;;;;;  inf-ruby-console-rails inf-ruby-console-auto inf-ruby-switch-setup
+;;;;;;  run-ruby inf-ruby inf-ruby-minor-mode inf-ruby-setup-keybindings)
+;;;;;;  "inf-ruby" "inf-ruby.el" (20998 26403 368132 580000))
 ;;; Generated autoloads from inf-ruby.el
 
 (autoload 'inf-ruby-setup-keybindings "inf-ruby" "\
@@ -42,11 +43,35 @@ Modify `rspec-compilation-mode' and `ruby-compilation-mode'
 keymaps to bind `inf-ruby-switch-from-compilation' to `!-x C-q'.
 
 \(fn)" nil nil)
+
+(autoload 'inf-ruby-console-auto "inf-ruby" "\
+Automatically determine the appropriate Ruby console command
+and the directory to run it from.
+
+\(fn)" t nil)
+
+(autoload 'inf-ruby-console-rails "inf-ruby" "\
+Run Rails console in DIR.
+
+\(fn DIR)" t nil)
+
+(autoload 'inf-ruby-console-gem "inf-ruby" "\
+Run IRB console for the gem in DIR.
+The main module should be loaded automatically. If DIR contains a
+Gemfile, it should use the `gemspec' instruction.
+
+\(fn DIR)" t nil)
+
+(autoload 'inf-ruby-console-default "inf-ruby" "\
+Run racksh, custom console.rb, or just IRB, in DIR.
+
+\(fn DIR)" t nil)
  (inf-ruby-setup-keybindings)
 
 ;;;***
 
-;;;### (autoloads nil nil ("inf-ruby-pkg.el") (20976 3180 99503 31000))
+;;;### (autoloads nil nil ("inf-ruby-pkg.el") (20998 26403 514552
+;;;;;;  179000))
 
 ;;;***
 

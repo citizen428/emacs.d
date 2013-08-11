@@ -3,8 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (flymake-jslint-load flymake-jslint-command flymake-jslint-detect-trailing-comma)
-;;;;;;  "flymake-jslint" "flymake-jslint.el" (20364 23791))
+;;;### (autoloads (flymake-jslint-load flymake-jslint-args flymake-jslint-command
+;;;;;;  flymake-jslint-detect-trailing-comma) "flymake-jslint" "flymake-jslint.el"
+;;;;;;  (20998 26409 244161 717000))
 ;;; Generated autoloads from flymake-jslint.el
 
 (defvar flymake-jslint-detect-trailing-comma t "\
@@ -12,24 +13,25 @@ Whether or not to report warnings about trailing commas.")
 
 (custom-autoload 'flymake-jslint-detect-trailing-comma "flymake-jslint" t)
 
-(defvar flymake-jslint-command "jsl" "\
+(defvar flymake-jslint-command (if (executable-find "jsl") "jsl" "jslint") "\
 Name (and optionally full path) of jslint executable.")
 
 (custom-autoload 'flymake-jslint-command "flymake-jslint" t)
 
+(defvar flymake-jslint-args (unless (string-equal "jsl" flymake-jslint-command) (mapcar 'symbol-name '(--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars --eqeq))) "\
+Command-line args for jslint executable.")
+
+(custom-autoload 'flymake-jslint-args "flymake-jslint" t)
+
 (autoload 'flymake-jslint-load "flymake-jslint" "\
 Configure flymake mode to check the current buffer's javascript syntax.
-
-This function is designed to be called in `js-mode-hook' or
-equivalent; it does not alter flymake's global configuration, so
-function `flymake-mode' alone will not suffice.
 
 \(fn)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("flymake-jslint-pkg.el") (20364 23792
-;;;;;;  159502))
+;;;### (autoloads nil nil ("flymake-jslint-pkg.el") (20998 26409
+;;;;;;  393517 860000))
 
 ;;;***
 

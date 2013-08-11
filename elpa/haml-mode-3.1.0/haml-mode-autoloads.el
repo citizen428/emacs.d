@@ -3,7 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (haml-mode) "haml-mode" "haml-mode.el" (19891 7836))
+;;;### (autoloads (haml-mode) "haml-mode" "haml-mode.el" (20998 26405
+;;;;;;  92141 131000))
 ;;; Generated autoloads from haml-mode.el
 
 (autoload 'haml-mode "haml-mode" "\
@@ -13,11 +14,12 @@ Major mode for editing Haml files.
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
+(add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
 
 ;;;***
 
-;;;### (autoloads nil nil ("haml-mode-pkg.el") (19891 7836 621835))
+;;;### (autoloads nil nil ("haml-mode-pkg.el") (20998 26405 235214
+;;;;;;  212000))
 
 ;;;***
 
