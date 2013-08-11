@@ -5,7 +5,8 @@
 ;; Author: Francis J. Wright <F.J.Wright at qmul.ac.uk>
 ;; Time-stamp: <23 August 2004>
 ;; URL: http://centaur.maths.qmul.ac.uk/Emacs/
-;; Version: $Id: csv-mode.el,v 1.50 2004/08/23 17:51:26 fjw Exp $
+;; Version: 1.50
+;; $Id: csv-mode.el,v 1.50 2004/08/23 17:51:26 fjw Exp $
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
@@ -1006,7 +1007,7 @@ BEG and END specify the region to align."
 		(setq beg (point))	; beginning of current field
 		(while (not (eolp))
 		  (csv-end-of-field)
-		  (setq x (- (point) beg)) ; field width
+		  (setq x (string-width (buffer-substring beg (point)))) ; field width
 		  (if w
 		      (if (> x (car w)) (setcar w x))
 		    (setq w (list x)
@@ -1026,7 +1027,7 @@ BEG and END specify the region to align."
 		  (let ((left-padding 0) (right-padding 0) overlay)
 		    (csv-end-of-field)
 		    (set-marker end (point)) ; end of current field
-		    (setq x (- (point) beg) ; field width
+		    (setq x (string-width (buffer-substring beg (point)))) ; field width
 			  x (- (car w) x)) ; required padding
 
 		    ;; beg = beginning of current field
