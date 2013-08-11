@@ -1,12 +1,6 @@
-[submodule "lib/org-mode"]
-	path = lib/org-mode
-	url = git://repo.or.cz/org-mode.git
 [submodule "lib/nyan-mode"]
 	path = lib/nyan-mode
 	url = git@github.com:citizen428/nyan-mode.git
-[submodule "lib/minimap"]
-	path = lib/minimap
-	url = git://randomsample.de/minimap.git
 [submodule "etc/snippets/ruby-mode"]
 	path = etc/snippets/ruby-mode
 	url = https://github.com/bmaland/yasnippet-ruby-mode.git
