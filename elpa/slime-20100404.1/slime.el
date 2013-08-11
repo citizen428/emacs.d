@@ -9119,37 +9119,37 @@ If they are not, position point at the first syntax error found."
 
 ;;;; Finishing up
 
-;; (require 'bytecomp)
-;; (let ((byte-compile-warnings '()))
-;;   (mapc #'byte-compile
-;;         '(slime-alistify
-;;           slime-log-event
-;;           slime-events-buffer
-;;           ;;slime-write-string
-;;           ;;slime-repl-emit
-;;           ;;slime-output-buffer
-;;           ;;slime-connection-output-buffer
-;;           ;;slime-output-filter
-;;           ;;slime-repl-show-maximum-output
-;;           slime-process-available-input
-;;           slime-dispatch-event
-;;           slime-net-filter
-;;           slime-net-have-input-p
-;;           slime-net-decode-length
-;;           slime-net-read
-;;           slime-print-apropos
-;;           slime-insert-propertized
-;;           slime-tree-insert
-;;           slime-symbol-constituent-at
-;;           slime-beginning-of-symbol
-;;           slime-end-of-symbol
-;;           ;; Used implicitly during fontification:
-;;           slime-current-parser-state
-;;           slime-eval-feature-expression
-;;           slime-forward-sexp
-;;           slime-forward-cruft
-;;           slime-forward-reader-conditional
-;;           )))
+(require 'bytecomp)
+ ;; (let ((byte-compile-warnings '()))
+ ;;   (mapc #'byte-compile
+ ;;         '(slime-alistify
+ ;;           slime-log-event
+ ;;           slime-events-buffer
+ ;;           ;;slime-write-string
+ ;;           ;;slime-repl-emit
+ ;;           ;;slime-output-buffer
+ ;;           ;;slime-connection-output-buffer
+ ;;           ;;slime-output-filter
+ ;;           ;;slime-repl-show-maximum-output
+ ;;           slime-process-available-input
+ ;;           slime-dispatch-event
+ ;;           slime-net-filter
+ ;;           slime-net-have-input-p
+ ;;           slime-net-decode-length
+ ;;           slime-net-read
+ ;;           slime-print-apropos
+ ;;           slime-insert-propertized
+ ;;           slime-tree-insert
+ ;;           slime-symbol-constituent-at
+ ;;           slime-beginning-of-symbol
+ ;;           slime-end-of-symbol
+ ;;           ;; Used implicitly during fontification:
+ ;;           slime-current-parser-state
+ ;;           slime-eval-feature-expression
+ ;;           slime-forward-sexp
+ ;;           slime-forward-cruft
+ ;;           slime-forward-reader-conditional
+ ;;           )))
 
 (provide 'slime)
 (run-hooks 'slime-load-hook)
