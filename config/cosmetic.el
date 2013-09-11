@@ -1,5 +1,4 @@
-(load-local-file "lib/tomorrow-theme/color-theme-tomorrow.el")
-(color-theme-tomorrow-night)
+(load-local-file "lib/tomorrow-theme/tomorrow-night-theme.el")
 
 ;; highlight current line
 (global-hl-line-mode 1)
