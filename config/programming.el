@@ -1,3 +1,7 @@
+;; enable Flycheck and electric-pair-mode for all buffers
+(add-hook 'prog-mode-hook #'global-flycheck-mode)
+(add-hook 'prog-mode-hook #'electric-pair-mode)
+
 ;; Quickrun
 (global-set-key (kbd "<f7>") 'quickrun)
 (global-set-key (kbd "<f8>") 'quickrun-compile-only)

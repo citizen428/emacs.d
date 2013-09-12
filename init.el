@@ -1,60 +1,80 @@
-;; start package.el before everything else
+;;; init.el --- Main configuraton file
+
+;; Copyright (C) 2013 Michael Kohl
+
+;; Author: Michael Kohl <citizen428@gmail.com>
+;; Keywords: local
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Main entry point of the configuration.  Performs and version check,
+;; does some basic setup and then proceeds to load the more specific
+;; configuration files.
+
+;;; Code:
+
+(when (version< emacs-version "24.1")
+  (error "This configuration was made for Emacs 24.1+"))
+
+(defconst config-main-dir
+  (if (boundp 'user-emacs-directory) user-emacs-directory "~/.emacs.d/")
+  "Main configuration directory.")
+
+(defconst config-lib-dir (expand-file-name "lib/" config-main-dir)
+  "Directory for non-ELPA packages.")
+
+(defconst config-extra-dir (expand-file-name "config/" config-main-dir )
+  "Directory for additional config files.")
+
+(defun load-config (file-name)
+  "Load FILE-NAME (without extension) from CONFIG-EXTRA-DIR."
+  (load-file (concat config-extra-dir file-name ".el")))
+
+(setq user-full-name "Michael Kohl"
+      user-mail-address "citizen428@gmail.com")
+
 (package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; When started from Emacs.app or similar, ensure $PATH
-;; is the same the user would see in Terminal.app
-;; https://github.com/purcell/emacs.d/blob/master/init-exec-path.el
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (replace-regexp-in-string
-                          "[ \t\n]*$"
-                          ""
-                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
-
-(when (or (eq window-system 'ns) (eq window-system 'x))
-  (set-exec-path-from-shell-PATH))
-
-(when (eq window-system 'x)
-  (setq browse-url-generic-program (executable-find "firefox")
-        browse-url-browser-function 'browse-url-generic))
-
-(setq dotfiles-dir (expand-file-name "~/.emacs.d/"))
-
-(defun add-local-path (p)
-  (add-to-list 'load-path (concat dotfiles-dir p)))
-
-(defun load-local-file (p)
-  (load-file (concat dotfiles-dir p)))
-
-(defun add-subdirs-to-load-path (dir)
-  (let ((default-directory  (concat dotfiles-dir dir)))
-    (normal-top-level-add-subdirs-to-load-path)))
-
-(add-local-path "lib")
-(add-subdirs-to-load-path "lib")
+(add-to-list 'load-path config-lib-dir)
+(let ((default-directory config-lib-dir))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; general handling
-(load-local-file "config/bindings.el")
-(load-local-file "config/built-in.el")
-(load-local-file "config/cosmetic.el")
-(load-local-file "config/ido-conf.el")
-(load-local-file "config/smex-conf.el")
+(load-config "bindings")
+(load-config "built-in")
+(load-config "cosmetic")
+(load-config "ido-conf")
+(load-config "platform")
+(load-config "smex-conf")
 
 ;; programming
-(load-local-file "config/ruby-conf.el")
-(load-local-file "config/slime-conf.el")
-(load-local-file "config/lisps-conf.el")
-(load-local-file "config/clojure-conf.el")
-(load-local-file "config/programming.el")
-(load-local-file "config/auto-complete-conf.el")
-(load-local-file "config/yasnippet-conf.el")
+(load-config "programming")
+(load-config "ruby-conf")
+(load-config "slime-conf")
+(load-config "lisps-conf")
+(load-config "clojure-conf")
+(load-config "auto-complete-conf")
+(load-config "yasnippet-conf")
 
 ;; misc modes
-(load-local-file "config/misc-conf.el")
-(load-local-file "config/org-mode-conf.el")
-(load-local-file "config/twittering-conf.el")
-(put 'ido-exit-minibuffer 'disabled nil)
+(load-config "misc-conf")
+(load-config "org-mode-conf")
+(load-config "twittering-conf")
 
-;; enable Flycheck for all buffers
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(provide 'init)
+;;; init.el ends here

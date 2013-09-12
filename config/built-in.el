@@ -39,7 +39,7 @@
       whitespace-line-column 100
       ediff-window-setup-function 'ediff-setup-windows-plain
       xterm-mouse-mode t
-      save-place-file (concat dotfiles-dir "tmp/places"))
+      save-place-file (concat config-main-dir "tmp/places"))
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -74,13 +74,5 @@
       `((".*" ,temporary-file-directory t)))
 
 (server-start)
-
-;; Add the original Emacs Lisp Package Archive
-(add-to-list 'package-archives
-             '("elpa" . "http://tromey.com/elpa/"))
-
-;; Add the user-contributed repository
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (setq initial-scratch-message nil)
