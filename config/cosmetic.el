@@ -24,7 +24,8 @@
 
 ;;; Code:
 
-(load-file (concat config-lib-dir "tomorrow-theme/tomorrow-night-theme.el"))
+(load-file
+ (concat config-lib-dir "tomorrow-theme/tomorrow-night-theme.el"))
 
 ;; highlight current line
 (global-hl-line-mode 1)

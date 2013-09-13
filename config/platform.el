@@ -24,10 +24,9 @@
 
 ;;; Code:
 
-;; When started from Emacs.app or similar, ensure $PATH
-;; is the same the user would see in Terminal.app
-;; https://github.com/purcell/emacs.d/blob/master/init-exec-path.el
+;; From https://github.com/purcell/emacs.d/blob/master/init-exec-path.el
 (defun set-exec-path-from-shell-PATH ()
+  "Ensure $PATH is the same as in a terminal."
   (let ((path-from-shell (replace-regexp-in-string
                           "[ \t\n]*$"
                           ""
@@ -37,6 +36,15 @@
 
 (when (or (eq window-system 'ns) (eq window-system 'x))
   (set-exec-path-from-shell-PATH))
+
+;; Use command as meta on OSX
+(when (eq system-type 'darwin)
+  (setq ns-alternate-modifier 'none)
+  (setq ns-command-modifier 'meta))
+
+;; Work around a bug on OS X where system-name is FQDN
+(when (eq system-type 'darwin)
+  (setq system-name (car (split-string system-name "\\."))))
 
 (provide 'platform)
 ;;; platform.el ends here

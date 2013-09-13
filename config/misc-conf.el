@@ -53,6 +53,5 @@
 
 (put 'ido-exit-minibuffer 'disabled nil)
 
-
 (provide 'misc-conf)
 ;;; misc-conf.el ends here

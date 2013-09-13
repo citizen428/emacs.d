@@ -55,12 +55,10 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; general handling
+(load-config "basic")
 (load-config "bindings")
-(load-config "built-in")
 (load-config "cosmetic")
-(load-config "ido-conf")
 (load-config "platform")
-(load-config "smex-conf")
 
 ;; programming
 (load-config "programming")
@@ -69,7 +67,6 @@
 (load-config "lisps-conf")
 (load-config "clojure-conf")
 (load-config "auto-complete-conf")
-(load-config "yasnippet-conf")
 
 ;; misc modes
 (load-config "misc-conf")

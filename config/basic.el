@@ -1,19 +1,54 @@
-(require 'uniquify)
-(require 'ansi-color)
-(require 'recentf)
+;;; built-in.el --- Configure Emacs builtins and basic modes
 
-;; When you visit a file, point goes to the last place where it was when you previously visited
+;; Copyright (C) 2013  Michael Kohl
+
+;; Author: Michael Kohl(require 'uniquify) <citizen428@gmail.com>
+;; Keywords: local
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Configuration for builtin and basic modes as well as default behaviors.
+
+;;; Code:
+
+(require 'ansi-color)
+
+;; Easy way to open recent files
+;; http://emacsredux.com/blog/2013/04/05/recently-visited-files/
+(require 'recentf)
+(setq recentf-max-saved-items 200
+      recentf-max-menu-items 15)
+(recentf-mode +1)
+
+(defun recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+
 (require 'saveplace)
 (setq-default save-place t)
 
-;; enable cua-mode for rectangular selections
 (require 'cua-base)
 (require 'cua-gmrk)
 (require 'cua-rect)
 (cua-mode 1)
 (setq cua-enable-cua-keys nil)
 
-;; remove all trailing whitespace before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; enable winner mode for C-c-(<left>|<right>) to navigate the history
@@ -52,15 +87,25 @@
 (auto-compression-mode t)
 (show-paren-mode 1)
 
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 15)
+
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (random t) ;; Seed the random-number generator
 
 (setq diff-switches "-u")
-
-(when (eq system-type 'darwin)
-  ;; Work around a bug on OS X where system-name is FQDN
-  (setq system-name (car (split-string system-name "\\."))))
 
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
@@ -73,6 +118,9 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(setq initial-scratch-message nil)
+
 (server-start)
 
-(setq initial-scratch-message nil)
+(provide 'built-in)
+;;; built-in.el ends here

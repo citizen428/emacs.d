@@ -22,3 +22,6 @@
 
 ;; nmap scripting engine uses Lua
 (add-to-list 'auto-mode-alist '("\\.nse$" . lua-mode))
+
+(require 'yasnippet)
+(yas-global-mode 1)
