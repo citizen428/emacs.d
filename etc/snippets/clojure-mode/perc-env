@@ -1,3 +1,0 @@
-#name: perc-env
-# --
-(env-gen (perc ${1:0.01} ${2:1.0}) :action :free)$0
