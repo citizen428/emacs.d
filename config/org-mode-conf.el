@@ -1,9 +1,39 @@
+;;; org-mode-conf.el --- org-mode specific config
+
+;; Copyright (C) 2013  Michael Kohl
+
+;; Author: Michael Kohl <citizen428@gmail.com>
+;; Keywords: local
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Configuration for org-mode.
+
+;;; Code:
+
 (setq org-startup-indented t)
 
-(require 'org-mac-link-grabber)
-(add-hook 'org-mode-hook
-          (lambda ()
-            (define-key org-mode-map (kbd "C-c g") 'omlg-grab-link)))
+(when (eq system-type 'darwin)
+  (require 'org-mac-link-grabber)
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (define-key org-mode-map (kbd "C-c g") 'omlg-grab-link)))
+  (setq org-mac-grab-Addressbook-app-p nil)
+  (setq org-mac-grab-Firefox-app-p nil)
+  (setq org-mac-grab-Mail-app-p nil))
 
 (setq org-todo-keywords '((sequence "IDEA" "TODO" "WIP" "DELEGATED" "|" "DONE")))
 
@@ -63,7 +93,5 @@
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 (setq org-export-html-style-include-default nil)
 
-;; org-mac-link-grabber
-(setq org-mac-grab-Addressbook-app-p nil)
-(setq org-mac-grab-Firefox-app-p nil)
-(setq org-mac-grab-Mail-app-p nil)
+(provide 'org-mode-conf)
+;;; org-mode-conf.el ends here

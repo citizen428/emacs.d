@@ -63,7 +63,6 @@
 ;; programming
 (load-config "programming")
 (load-config "ruby-conf")
-(load-config "slime-conf")
 (load-config "lisps-conf")
 (load-config "clojure-conf")
 (load-config "auto-complete-conf")
