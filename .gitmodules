@@ -4,3 +4,9 @@
 [submodule "etc/snippets/ruby-mode"]
 	path = etc/snippets/ruby-mode
 	url = https://github.com/bmaland/yasnippet-ruby-mode.git
+[submodule "lib/ht"]
+	path = lib/ht
+	url = git@github.com:Wilfred/ht.el.git
+[submodule "lib/persistent-soft"]
+	path = lib/persistent-soft
+	url = git@github.com:rolandwalker/persistent-soft.git
