@@ -26,19 +26,21 @@
 
 (setq org-startup-indented t)
 
-(when (eq system-type 'darwin)
-  (require 'org-mac-link-grabber)
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (define-key org-mode-map (kbd "C-c g") 'omlg-grab-link)))
-  (setq org-mac-grab-Addressbook-app-p nil)
-  (setq org-mac-grab-Firefox-app-p nil)
-  (setq org-mac-grab-Mail-app-p nil))
+(require 'org-mac-link)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
+(setq org-mac-grab-Chrome-app-p nil
+      org-mac-grab-Mail-app-p nil
+      org-mac-grab-Outlook-app-p nil
+      org-mac-grab-Safari-app-p nil
+      org-mac-grab-Chrome-app-p nil
+      org-mac-grab-Skim-app-p nil)
 
-(setq org-todo-keywords '((sequence "IDEA" "TODO" "WIP" "DELEGATED" "|" "DONE")))
+(setq org-todo-keywords '((sequence "IDEA" "TODO" "WIP" "DELEGATED" "VERIFY" "|" "DONE")))
 
 ;; LaTeX and PDf output
-(require 'org-latex)
+(require 'ox-latex)
 
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
