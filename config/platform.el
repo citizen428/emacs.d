@@ -34,17 +34,15 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(when (or (eq window-system 'ns) (eq window-system 'x))
-  (set-exec-path-from-shell-PATH))
-
-;; Use command as meta on OSX
-(when (eq system-type 'darwin)
+(when (eq window-system 'ns)
+  ;; Use command as meta
   (setq ns-alternate-modifier 'none)
-  (setq ns-command-modifier 'meta))
-
-;; Work around a bug on OS X where system-name is FQDN
-(when (eq system-type 'darwin)
-  (setq system-name (car (split-string system-name "\\."))))
+  (setq ns-command-modifier 'meta)
+  ;; Invoke login shells, so that .profile or .bash_profile is read
+  (setq shell-command-switch "-lc")
+  ;; Work around a bug on OS X where system-name is FQDN
+  (setq system-name (car (split-string system-name "\\.")))
+  (set-exec-path-from-shell-PATH))
 
 (provide 'platform)
 ;;; platform.el ends here
